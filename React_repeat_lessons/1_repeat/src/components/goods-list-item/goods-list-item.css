@@ -1,0 +1,37 @@
+.btn-danger {
+  margin: 0 5px;
+}
+.list-group-item-input {
+  width: 200px;
+  margin: 0 10px;
+}
+.list-group-item-label {
+  width: 100%;
+  font-size: 24px;
+}
+.list-group-item-light.like {
+  color: rgb(76, 179, 158);
+  font-weight: 900;
+  /* font-style: italic; */
+}
+.list-group-item-light.dislike {
+  color: rgb(247, 97, 80);
+  font-weight: 200;
+  font-style: italic;
+}
+.btn-danger {
+  background-color: rgb(245, 214, 208);
+  border-color: rgb(245, 214, 208);
+}
+.btn-danger.active {
+  background-color: rgb(247, 97, 80);
+  border-color: rgb(247, 97, 80);
+}
+.btn-success {
+  background-color: rgb(192, 240, 230);
+  border-color: rgb(192, 240, 230);
+}
+.btn-success.active {
+  background-color: rgb(76, 179, 158);
+  border-color: rgb(76, 179, 158);
+}

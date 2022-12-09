@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+html {
+  min-height: 100%;
+  width: 100%;
+}
+body {
+  position: relative;
+  /* min-height: 100vh; */
+  background: rgb(170, 106, 212);
+  background: linear-gradient(
+    144deg,
+    rgba(170, 106, 212, 1) 0%,
+    rgba(208, 73, 99, 1) 37%,
+    rgba(223, 118, 92, 1) 70%,
+    rgba(212, 120, 50, 1) 100%
+  );
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 
+
+code {
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+}

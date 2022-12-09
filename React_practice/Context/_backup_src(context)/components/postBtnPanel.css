@@ -1,0 +1,14 @@
+.btn-panel {
+  font-family: 'Montserrat Alternates', sans-serif;
+  cursor: pointer;
+  background: #1a79f5;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+.btn-panel:hover {
+  background: #0b63d6;
+}

@@ -1,0 +1,8 @@
+.dialog {
+  padding: 10px;
+}
+.dialog.active {
+  color: brown;
+  font-weight: 900;
+}
+

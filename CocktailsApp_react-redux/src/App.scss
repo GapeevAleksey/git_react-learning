@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import './variables';
+* {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+// ----------------------------------------------
+
+// *,
+// *:before,
+// *:after {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+body {
+  background-color: #f0eff4;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+// ----------------------------------------------
+
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  padding: 0 30px;
+}
+.container {
+  height: calc(100vh - 70px);
+  border: 3px solid $blueBorder-color;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 1440px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(182, 182, 182);
+}
+
+// ---> Шапка -------------------------------------------
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid $blueBorder-color;
+  ul {
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    li {
+      cursor: pointer;
+      margin: 0 10px;
+    }
+  }
+  .headerText {
+    margin: 0 20px;
+  }
+}
+// ---< Шапка -------------------------------------------
+
+// ---> Основной блок -----------------------------------
+.contentBody {
+  display: flex;
+  justify-content: space-between;
+}
+.filterPanel {
+  // padding: 0 10px;
+  width: 20%;
+  min-width: 200px;
+  height: calc(100vh - 141px);
+  overflow: scroll;
+  overflow-x: hidden;
+  ul {
+    margin-top: 0;
+    padding: 0;
+    li {
+      text-align: left;
+      cursor: pointer;
+      // margin: 10px;
+      padding: 5px 5px 5px 15px;
+      &:hover {
+        color: $blueBorder-color;
+      }
+      &.active {
+        color: $blueBorder-color;
+        font-weight: 900;
+        background-color: #eff6ff;
+      }
+    }
+  }
+  & > .inputSearch {
+  }
+  input {
+    background: #eff6ff;
+    padding: 10px 10px 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid $blueBorder-color;
+    :focus {
+      outline: 0;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 3px; /* ширина scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: rgb(218, 218, 218); /* цвет дорожки */
+    // border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #7a9cc2; /* цвет плашки */
+    // border-radius: 10px; /* закругления плашки */
+    // border: 1px solid rgb(179, 179, 179); /* padding вокруг плашки */
+  }
+}
+.coctails {
+  background-color: $main-color;
+  width: 100%;
+
+  & > .titleIngridient {
+    // background-color: #fff;
+    // margin: 32px;
+    // line-height: 60px;
+    // border-bottom: 2px solid rgb(209, 209, 209);
+    // border-radius: 5px;
+    // box-shadow: 0px 5px 7px rgb(182, 182, 182);
+    box-shadow: 0px 5px 7px rgb(182, 182, 182);
+    font-size: 24px;
+    background-color: #fff;
+    line-height: 60px;
+  }
+  ul {
+    height: calc(100vh - 241px);
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // grid-template-columns: repeat(5, 17.7%);
+    // column-gap: 25px;
+    // row-gap: 30px;
+    &::-webkit-scrollbar {
+      width: 3px; /* ширина scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+      background: rgb(218, 218, 218); /* цвет дорожки */
+      // border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #7a9cc2; /* цвет плашки */
+      // border-radius: 10px; /* закругления плашки */
+      // border: 1px solid rgb(179, 179, 179); /* padding вокруг плашки */
+    }
+    // margin-top: 30px;
+    li {
+      cursor: pointer;
+      flex-grow: 1;
+      background-color: white;
+      margin: 15px;
+      min-width: 220px;
+      height: 280px;
+      border: 2px solid rgb(209, 209, 209);
+      border-radius: 5px;
+      box-shadow: 2px 3px 5px rgb(182, 182, 182);
+      .cardImg {
+        margin: 20px auto;
+
+        img {
+          object-fit: cover;
+          height: 170px;
+          width: 170px;
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgb(49, 49, 49);
+        }
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+}

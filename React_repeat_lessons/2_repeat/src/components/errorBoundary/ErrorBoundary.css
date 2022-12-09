@@ -1,0 +1,10 @@
+.bordered1 {
+  border: 1px solid rgb(150, 149, 149);
+  font-size: 20px;
+  padding: 20px;
+}
+.bordered10 {
+  border: 10px solid rgb(150, 149, 149);
+  font-size: 24px;
+  padding: 20px;
+}

@@ -30,13 +30,13 @@ const CocktailInfo = () => {
           <ToggleFavorite
             idDrink={idDrink}
             data={data}
-            render={(data) => {
-              <button
-                onClick={(handleClick) => {
-                  handleClick();
-                }}
-              />;
-            }}
+            // render={(data) => {
+            //   <button
+            //     onClick={(handleClick) => {
+            //       handleClick();
+            //     }}
+            //   />;
+            // }}
           />
         </div>
 

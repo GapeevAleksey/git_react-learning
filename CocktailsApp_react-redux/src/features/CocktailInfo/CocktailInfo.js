@@ -19,7 +19,6 @@ const CocktailInfo = () => {
 
   const showCocktailInfo = () => {
     if (cocktailModal && cocktailInfo.loadingStatus !== 'loaded') {
-      console.log(data);
       return <ModalSkeleton />;
     }
     const { strDrinkThumb, strDrink, idDrink, strInstructions } = data;
@@ -30,13 +29,15 @@ const CocktailInfo = () => {
           <ToggleFavorite
             idDrink={idDrink}
             data={data}
-            // render={(data) => {
-            //   <button
-            //     onClick={(handleClick) => {
-            //       handleClick();
-            //     }}
-            //   />;
-            // }}
+            clazz={{ add: styles.favoriteAdd, remove: styles.favoriteRemove }}
+            title={{ add: 'Add favorite', remove: 'Remove favorite' }}
+            render={(handleClick, clazz, title) => {
+              return (
+                <button className={clazz} onClick={handleClick}>
+                  {title}
+                </button>
+              );
+            }}
           />
         </div>
 

@@ -5,30 +5,23 @@ import {
   removeFavoriteCocktail,
 } from '../../app/favoriteSlice';
 
-const ToggleFavorite = ({ idDrink, data }) => {
+const ToggleFavorite = ({ idDrink, data, render, clazz, title }) => {
   const { favoriteCocktails } = useSelector((state) => state.favoriteSlice);
   const dispatch = useDispatch();
   const addFavoriteButton = () => {
-    return <button
-      onClick={() =>
-        // Сделать проверку повторного нажатия
-        dispatch(addFavoriteCocktail({ id: idDrink, cocktail: data }))
-      }
-      className={styles.add}
-    >
-      Add to favorite
-    </button>;
+    const handleClickAdd = (e) => {
+      e.stopPropagation();
+      dispatch(addFavoriteCocktail({ id: idDrink, cocktail: data }));
+    };
+    return render(handleClickAdd, clazz.add, title.add);
   };
   const removeFavoriteButton = () => {
-    return <button
-      onClick={() =>
-        // Сделать проверку повторного нажатия
-        dispatch(removeFavoriteCocktail({ id: idDrink }))
-      }
-      className={styles.remove}
-    >
-      Remove to favorite
-    </button>;
+    const handleClickRemove = (e) => {
+      e.stopPropagation();
+      dispatch(removeFavoriteCocktail({ id: idDrink }));
+    };
+
+    return render(handleClickRemove, clazz.remove, title.remove);
   };
 
   return (

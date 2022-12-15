@@ -1,0 +1,21 @@
+@import '../../variables';
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid $blueBorder-color;
+}
+.headerText {
+  margin: 0 20px;
+}
+
+.list {
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  cursor: pointer;
+  margin: 0 10px;
+}

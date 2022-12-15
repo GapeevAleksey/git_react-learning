@@ -1,0 +1,64 @@
+@import '../../variables.scss';
+.body {
+  // height: 400px;
+  // width: 400px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background-color: $main-color;
+}
+.image {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgb(182, 182, 182);
+  img {
+    margin-bottom: 15px;
+    top: 0;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+}
+.favoriteButton {
+  cursor: pointer;
+  color: rgb(54, 54, 54);
+  font-weight: 700;
+  padding: 15px;
+  background-color: rgb(200, 247, 182);
+  border: 2px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgb(182, 182, 182);
+  &:hover {
+    background-color: rgb(181, 224, 164);
+  }
+}
+
+.textBlock {
+  width: 20vw;
+  padding: 0 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgb(182, 182, 182);
+}
+
+.ingredients {
+  padding: 15px;
+  background-color: white;
+  border: 2px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgb(182, 182, 182);
+  .title {
+    margin-bottom: 15px;
+  }
+}

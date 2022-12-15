@@ -11,7 +11,7 @@ const NavPanel = ({ currentIngredient, setCurrentIngredient }) => {
   const transformIngsList = (list) => {
     const cocksDB = list.map((item) => item['strIngredient1']);
     // console.log(cocksDB);
-    return cocksDB.sort();
+    return cocksDB.sort(); 
   };
 
   const showIngsList = (filter) => {

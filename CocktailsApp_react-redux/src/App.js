@@ -4,6 +4,8 @@ import HeaderNavigation from './features/HeaderNavigation/HeaderNavigation';
 import MainPage from './pages/MainPage';
 import { Routes, Route } from 'react-router-dom';
 import FavoritePage from './pages/FavoritePage';
+import CocktailModal from './features/CocktailModal/CocktailModal';
+import CocktailInfo from './features/CocktailInfo/CocktailInfo';
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,9 @@ function App() {
             <Route path="/favorite" element={<FavoritePage />} />
           </Routes>
         </div>
+        <CocktailModal>
+          <CocktailInfo />
+        </CocktailModal>
       </div>
     </div>
   );

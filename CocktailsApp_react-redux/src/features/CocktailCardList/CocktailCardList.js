@@ -1,3 +1,4 @@
+import styles from './CocktailCardList.module.scss'
 import React, { useEffect } from 'react';
 import { fetchCockailsByIngredient } from '../../app/coctailsSlice';
 import CocktailCard from '../CocktailCard/CocktailCard';
@@ -5,24 +6,28 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const CocktailCardList = () => {
   const dispatch = useDispatch();
-  const cocktails = useSelector(
-    (state) => state.cocktailsSlice.cocktails.drinks
-  );
+  const cocktailsSlice = useSelector((state) => state.cocktailsSlice);
+  const ingredientsSlice = useSelector((state) => state.ingredientsSlice);
+  const { currentIngredient } = ingredientsSlice;
+
   useEffect(() => {
-    dispatch(fetchCockailsByIngredient('gin'));
-  }, []);
+    dispatch(fetchCockailsByIngredient(currentIngredient));
+  }, [currentIngredient]);
 
   return (
-    <div className="coctails">
-      <div className="titleIngridient">
-        <span>Ingridient</span>
+    <div className={styles.body}>
+      <div className={styles.title}>
+        <span>{currentIngredient}</span>
       </div>
-      <ul>
-        {cocktails?.map(({ strDrink, strDrinkThumb }) => (
+      <ul className={styles.list}>
+        {cocktailsSlice.errorStatus && <h2>{cocktailsSlice.errorStatus}</h2>}
+        {cocktailsSlice.cocktails.drinks?.map(({ strDrink, strDrinkThumb, idDrink }) => (
           <CocktailCard
             key={strDrink}
+            idDrink={idDrink}
             strDrink={strDrink}
             strDrinkThumb={strDrinkThumb}
+
           />
         ))}
       </ul>

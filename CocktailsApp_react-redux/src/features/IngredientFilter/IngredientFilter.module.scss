@@ -1,0 +1,48 @@
+@import '../../variables';
+.filterPanel {
+  // padding: 0 10px;
+  width: 20%;
+  min-width: 200px;
+  height: calc(100vh - 141px);
+  overflow: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 3px; /* ширина scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: rgb(218, 218, 218); /* цвет дорожки */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #7a9cc2; /* цвет плашки */
+  }
+}
+.inputSearch {
+  background: #eff6ff;
+  padding: 10px 10px 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid $blueBorder-color;
+  :focus {
+    outline: 0;
+  }
+}
+
+.list {
+  margin-top: 0;
+  padding: 0;
+}
+.item {
+  text-align: left;
+  cursor: pointer;
+  padding: 5px 5px 5px 15px;
+  &:hover {
+    color: $blueBorder-color;
+    background-color: #f4f8ff;
+  }
+  &.active {
+    color: $blueBorder-color;
+    font-weight: 900;
+    background-color: #d6e6fa;
+  }
+}

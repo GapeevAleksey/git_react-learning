@@ -12,6 +12,7 @@ const CocktailInfo = () => {
     (state) => state.cocktailsSlice
   );
   const { data, cocktailId } = cocktailInfo;
+  console.log(data);
 
   const toggleFavoriteClasses = {
     add: styles.favoriteAdd,
@@ -30,16 +31,19 @@ const CocktailInfo = () => {
     if (cocktailModal && cocktailInfo.loadingStatus !== 'loaded') {
       return <ModalSkeleton />;
     }
-    const { strDrinkThumb, strDrink, idDrink, strInstructions } = data;
+    const { strDrinkThumb, strDrink, idDrink, strInstructions, strAlcoholic } =
+      data;
     const showInstruction = () => {
-
-      return  strInstructions?.length > 400
+      return strInstructions?.length > 400
         ? strInstructions.slice(0, 500) + '...'
         : strInstructions;
     };
     return (
       <div className={styles.body}>
         <div className={styles.image}>
+          {strAlcoholic === 'Non alcoholic' ? (
+            <span className={styles.marker}></span>
+          ) : null}
           <img src={strDrinkThumb} alt={strDrink} />
           <ToggleFavorite
             idDrink={idDrink}

@@ -9,6 +9,7 @@
   background-color: $main-color;
 }
 .image {
+  position: relative;
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -86,5 +87,46 @@
   box-shadow: 2px 3px 5px rgb(182, 182, 182);
   &:hover {
     background-color: rgb(255, 153, 153);
+  }
+}
+.marker {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  height: 150px;
+  width: 150px;
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: 'FREE ALCO';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #72c7f5;
+    width: 150%;
+    height: 40px;
+    transform: rotate(-45deg) translateY(-20px);
+    align-items: center;
+    color: #fff;
+    font-weight: 900;
+    // letter-spacing: 0.1rem;
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 0.3);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #60aad1;
+    z-index: -1;
+    box-shadow: 140px -140px #60aad1;
   }
 }

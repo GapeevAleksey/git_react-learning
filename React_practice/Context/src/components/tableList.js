@@ -28,7 +28,11 @@ export default TableList;
 // --------------------------------------------------
 
 const ErrorDiv = ({ error }) => {
+<<<<<<< HEAD
   return <h3 style={{ color: '#bb5557' }}>{error}</h3>;
+=======
+  return <h3 style={{ color: '#bb5555' }}>{error}</h3>;
+>>>>>>> a25e779760e8ddd9d567a744d948efd2189e016a
 };
 
 const LoadDiv = ({ getData, setDataBase, value }) => {

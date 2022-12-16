@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+@import './variables';
+@import-normalize;
+* {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+// ----------------------------------------------
+
+// *,
+// *:before,
+// *:after {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+
+body {
+  background-color: #f0eff4;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+// ----------------------------------------------
+
+.App {
+  text-align: center;
+}
+
+.wrapper {
+  padding: 0 30px;
+}
+.container {
+  height: calc(100vh - 70px);
+  border: 3px solid $blueBorder-color;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 1440px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(182, 182, 182);
+}
+
+// ---> Основной блок -----------------------------------

@@ -1,0 +1,19 @@
+.wrapper {
+  padding: 20px;
+  background-color: rgb(39, 39, 46);
+  border-radius: 5px;
+}
+.app {
+  margin: 30px auto;
+  max-width: 1000px;
+}
+.goods-not-found {
+  text-align: center;
+  display: none;
+}
+.goods-not-found.show {
+  display: block;
+}
+h2 {
+  color: rgb(255, 255, 255);
+}

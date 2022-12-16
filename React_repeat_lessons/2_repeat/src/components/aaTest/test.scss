@@ -1,0 +1,19 @@
+$widthElem: 200px;
+
+.test-block {
+  padding: 10px;
+  border: 5px solid rgb(141, 141, 141);
+  button {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: $widthElem;
+  }
+}
+.colored-div {
+  display: flex;
+  width: $widthElem;
+  height: 100px;
+  background-color: rgb(179, 175, 175);
+  justify-content: center;
+  align-items: center;
+}

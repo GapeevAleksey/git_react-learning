@@ -1,6 +1,6 @@
 import styles from './CocktailCard.module.scss';
-import addFavoriteIcon from '../../images/balloon-heart.svg';
-import removeFavoriteIcon from '../../images/balloon-heart-fill.svg';
+import addFavoriteIcon from '../../images/heart.png';
+import removeFavoriteIcon from '../../images/heartPink.png';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { openCocktailModal, setCocktailId } from '../../app/coctailsSlice';
@@ -26,7 +26,6 @@ const CocktailCard = ({ strDrink, strDrinkThumb, idDrink }) => {
           dispatch(setCocktailId(idDrink));
         }}
       >
-        
         <ToggleFavorite
           idDrink={idDrink}
           data={{ strDrink, strDrinkThumb, idDrink }}

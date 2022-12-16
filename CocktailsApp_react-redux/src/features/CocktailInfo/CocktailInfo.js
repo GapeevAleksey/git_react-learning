@@ -31,6 +31,12 @@ const CocktailInfo = () => {
       return <ModalSkeleton />;
     }
     const { strDrinkThumb, strDrink, idDrink, strInstructions } = data;
+    const showInstruction = () => {
+
+      return  strInstructions?.length > 400
+        ? strInstructions.slice(0, 500) + '...'
+        : strInstructions;
+    };
     return (
       <div className={styles.body}>
         <div className={styles.image}>
@@ -53,7 +59,7 @@ const CocktailInfo = () => {
         <div className={styles.textBlock}>
           <div className={styles.description}>
             <h2>{strDrink}</h2>
-            <p>{strInstructions}</p>
+            <p>{showInstruction()}</p>
             <div>{idDrink}</div>
           </div>
           <div className={styles.ingredients}>

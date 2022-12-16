@@ -2,10 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { useCocktails } from '../services/useCocktails';
 
 const initialState = {
-  cocktails: {},
   cocktailModal: false,
-  loadingStatus: null,
-  errorStatus: null,
+  cocktailsByIngredient: {
+    cocktails: null,
+    loadingStatus: null,
+    errorStatus: null,
+  },
   cocktailInfo: {
     data: {},
     cocktailId: '',
@@ -47,15 +49,15 @@ const cocktailsSlice = createSlice({
   },
   extraReducers: {
     [fetchCockailsByIngredient.pending]: (state) => {
-      state.loadingStatus = 'loading';
-      state.errorStatus = null;
+      state.cocktailsByIngredient.loadingStatus = 'loading';
+      state.cocktailsByIngredient.errorStatus = null;
     },
     [fetchCockailsByIngredient.fulfilled]: (state, action) => {
-      state.cocktails = action.payload;
-      state.loadingStatus = 'loaded';
+      state.cocktailsByIngredient.cocktails = action.payload;
+      state.cocktailsByIngredient.loadingStatus = 'loaded';
     },
     [fetchCockailsByIngredient.rejected]: (state) => {
-      state.errorStatus = 'Some error has occurred';
+      state.cocktailsByIngredient.errorStatus = 'Some error has occurred';
     },
     [fetchCocktailInfo.pending]: (state) => {
       state.cocktailInfo.loadingStatus = 'loading';
@@ -67,6 +69,7 @@ const cocktailsSlice = createSlice({
     },
     [fetchCocktailInfo.rejected]: (state) => {
       state.cocktailInfo.errorStatus = 'Some error has occurred';
+      state.cocktailInfo.loadingStatus = 'loaded';
     },
   },
 });

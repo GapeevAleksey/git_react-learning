@@ -33,7 +33,7 @@ const IngredientFilter = () => {
     if (!ingredients) {
       return;
     }
-    const ingredientsList = ingredients.drinks.map(
+    const ingredientsList = ingredients.map(
       (ingredient) => ingredient.strIngredient1
     );
     ingredientsList.sort();
@@ -60,7 +60,7 @@ const IngredientFilter = () => {
   };
 
   return (
-    <div className={styles.filterPanel}>
+    <div className={styles.filterBlock}>
       <input
         className={styles.inputSearch}
         value={searchIngredient}
@@ -69,7 +69,9 @@ const IngredientFilter = () => {
         // onChange={(e) => dispatch(setCurrentIngredient(e.target.value))}
         onChange={(e) => setSearchIngredient(e.target.value)}
       />
-      <ul className={styles.list}>{showIngredientsList(searchIngredient)}</ul>
+      <div className={styles.filterPanel}>
+        <ul className={styles.list}>{showIngredientsList(searchIngredient)}</ul>
+      </div>
     </div>
   );
 };

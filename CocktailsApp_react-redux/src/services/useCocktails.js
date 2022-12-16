@@ -6,12 +6,12 @@ export const useCocktails = () => {
 
   const getCocktailsByIngredient = async (ingredient) => {
     const data = await request(`${_apiURL}filter.php?i=${ingredient}`);
-    return data;
+    return data.drinks;
   };
 
   const getIngredientsList = async () => {
     const data = await request(`${_apiURL}list.php?i=list`);
-    return data;
+    return data.drinks;
   };
   const getCocktailInfo = async (cocktailId) => {
     const data = await request(`${_apiURL}lookup.php?i=${cocktailId}`);

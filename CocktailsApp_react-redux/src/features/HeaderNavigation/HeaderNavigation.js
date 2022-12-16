@@ -1,4 +1,4 @@
-import styles from './HeaderNavigation.module.scss'
+import styles from './HeaderNavigation.module.scss';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -6,15 +6,27 @@ const HeaderNavigation = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerText}>
-        <h2>CoctailsBook</h2>
+        <h2>
+          <NavLink to="/">CoctailsBook</NavLink>
+        </h2>
       </div>
       <nav className="headerNav">
         <ul className={styles.list}>
           <li className={styles.item}>
-            <NavLink to="/">Main</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? styles.active : null)}
+            >
+              Main
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="/favorite">Favorite</NavLink>
+          <li className={styles.item}>
+            <NavLink
+              to="/favorite"
+              className={({ isActive }) => (isActive ? styles.active : null)}
+            >
+              Favorite
+            </NavLink>
           </li>
         </ul>
       </nav>

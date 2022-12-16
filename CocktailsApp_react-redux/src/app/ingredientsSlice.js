@@ -24,8 +24,15 @@ const ingredientsSlice = createSlice({
     },
   },
   extraReducers: {
+    [fetchIngredients.pending]: (state) => {
+      state.loadingStatus = 'loading';
+    },
     [fetchIngredients.fulfilled]: (state, action) => {
       state.ingredients = action.payload;
+      state.loadingStatus = 'loaded';
+    },
+    [fetchIngredients.rejected]: (state, action) => {
+      state.loadingStatus = 'loaded';
     },
   },
 });

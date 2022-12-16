@@ -7,11 +7,20 @@ import CocktaiIngredients from '../CocktaiIngredients/CocktaiIngredients';
 import ToggleFavorite from '../ToggleFavorite/ToggleFavorite';
 import ModalSkeleton from '../Sketeton/ModalSkeleton/ModalSkeleton';
 const CocktailInfo = () => {
+  const dispatch = useDispatch();
   const { cocktailInfo, cocktailModal } = useSelector(
     (state) => state.cocktailsSlice
   );
   const { data, cocktailId } = cocktailInfo;
-  const dispatch = useDispatch();
+
+  const toggleFavoriteClasses = {
+    add: styles.favoriteAdd,
+    remove: styles.favoriteRemove,
+  };
+  const toggleFavoriteTitle = {
+    add: 'Add favorite',
+    remove: 'Remove favorite',
+  };
 
   useEffect(() => {
     dispatch(fetchCocktailInfo(cocktailId));
@@ -29,8 +38,8 @@ const CocktailInfo = () => {
           <ToggleFavorite
             idDrink={idDrink}
             data={data}
-            clazz={{ add: styles.favoriteAdd, remove: styles.favoriteRemove }}
-            title={{ add: 'Add favorite', remove: 'Remove favorite' }}
+            clazz={toggleFavoriteClasses}
+            title={toggleFavoriteTitle}
             render={(handleClick, clazz, title) => {
               return (
                 <button className={clazz} onClick={handleClick}>

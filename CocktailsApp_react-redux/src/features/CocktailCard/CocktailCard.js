@@ -7,6 +7,16 @@ import { openCocktailModal, setCocktailId } from '../../app/coctailsSlice';
 import ToggleFavorite from '../ToggleFavorite/ToggleFavorite';
 const CocktailCard = ({ strDrink, strDrinkThumb, idDrink }) => {
   const dispatch = useDispatch();
+
+  const toggleFavoriteClasses = {
+    add: styles.favoriteAddRemove,
+    remove: styles.favoriteAddRemove,
+  };
+  const toggleFavoriteTitle = {
+    add: addFavoriteIcon,
+    remove: removeFavoriteIcon,
+  };
+
   return (
     <>
       <li
@@ -19,12 +29,12 @@ const CocktailCard = ({ strDrink, strDrinkThumb, idDrink }) => {
         <ToggleFavorite
           idDrink={idDrink}
           data={{ strDrink, strDrinkThumb, idDrink }}
-          clazz={{ add: styles.favoriteAdd, remove: styles.favoriteRemove }}
-          title={{ add: addFavoriteIcon, remove: removeFavoriteIcon }}
+          clazz={toggleFavoriteClasses}
+          title={toggleFavoriteTitle}
           render={(handleClick, clazz, title) => {
             return (
               <div className={clazz} onClick={handleClick}>
-                <img src={title} alt="" />
+                <img src={title} alt="*" />
               </div>
             );
           }}

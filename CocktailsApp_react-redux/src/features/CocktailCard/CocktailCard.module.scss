@@ -37,7 +37,7 @@
   }
 }
 
-.favoriteAdd {
+.favoriteAddRemove {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -57,23 +57,4 @@
     height: 35px;
   }
 }
-.favoriteRemove {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  // width: 5px;
-  // height: 5px;
-  // padding: 15px;
-  // background-color: rgb(255, 174, 174);
-  // border: 2px solid rgb(209, 209, 209);
-  // border-radius: 50%;
-  // box-shadow: 2px 3px 5px rgb(182, 182, 182);
-  // &:hover {
-  //   background-color: rgb(255, 153, 153);
-  // }
-  img {
-    width: 35px;
-    height: 35px;
-  }
-}
+

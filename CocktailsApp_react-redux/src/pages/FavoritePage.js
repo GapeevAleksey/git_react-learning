@@ -1,6 +1,7 @@
 import styles from './FavoritePage.module.scss'
 import {useSelector } from 'react-redux';
 import CocktailCard from '../features/CocktailCard/CocktailCard';
+import React from 'react';
 const FavoritePage = () => {
   const { favoriteCocktails } = useSelector((state) => state.favoriteSlice);
   const favoriteCocktailsArray = Object.values(favoriteCocktails);

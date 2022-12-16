@@ -13,6 +13,7 @@ function App() {
         <div className="container">
           <HeaderNavigation />
           <Routes>
+            <Route index element={<MainPage />} />
             <Route path="/" element={<MainPage />} />
             <Route path="/favorite" element={<FavoritePage />} />
           </Routes>

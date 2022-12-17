@@ -22,5 +22,22 @@
 }
 a.active {
   font-weight: 900;
-  color:$blueBorder-color;
+  color: $blueBorder-color;
+}
+.smallTitle {
+  display: none;
+}
+.bigTitle {
+  display: block;
+}
+
+//=============================
+
+@media (max-width: 481px) {
+  .smallTitle {
+    display: block;
+  }
+  .bigTitle {
+    display: none;
+  }
 }

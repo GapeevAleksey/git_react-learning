@@ -65,7 +65,7 @@ const IngredientFilter = () => {
         className={styles.inputSearch}
         value={searchIngredient}
         type="text"
-        placeholder="Search ingridient"
+        placeholder="Search..."
         // onChange={(e) => dispatch(setCurrentIngredient(e.target.value))}
         onChange={(e) => setSearchIngredient(e.target.value)}
       />

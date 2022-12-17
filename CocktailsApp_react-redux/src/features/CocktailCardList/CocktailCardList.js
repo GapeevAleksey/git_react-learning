@@ -20,21 +20,23 @@ const CocktailCardList = () => {
       <div className={styles.title}>
         <span>{currentIngredient}</span>
       </div>
-      <ul className={styles.list}>
-        {cocktailsByIngredient.errorStatus && (
-          <h2>{cocktailsByIngredient.errorStatus}</h2>
-        )}
-        {cocktailsByIngredient.cocktails?.map(
-          ({ strDrink, strDrinkThumb, idDrink }) => (
-            <CocktailCard
-              key={strDrink}
-              idDrink={idDrink}
-              strDrink={strDrink}
-              strDrinkThumb={strDrinkThumb}
-            />
-          )
-        )}
-      </ul>
+      <div className={styles.contentBlock}>
+        <ul className={styles.list}>
+          {cocktailsByIngredient.errorStatus && (
+            <h2>{cocktailsByIngredient.errorStatus}</h2>
+          )}
+          {cocktailsByIngredient.cocktails?.map(
+            ({ strDrink, strDrinkThumb, idDrink }) => (
+              <CocktailCard
+                key={strDrink}
+                idDrink={idDrink}
+                strDrink={strDrink}
+                strDrinkThumb={strDrinkThumb}
+              />
+            )
+          )}
+        </ul>
+      </div>
     </div>
   );
 };

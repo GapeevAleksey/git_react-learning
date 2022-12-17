@@ -6,8 +6,11 @@ const HeaderNavigation = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerText}>
-        <h2>
+        <h2 className={styles.bigTitle}>
           <NavLink to="/">CoctailsBook</NavLink>
+        </h2>
+        <h2 className={styles.smallTitle}>
+          <NavLink to="/">CB</NavLink>
         </h2>
       </div>
       <nav className="headerNav">

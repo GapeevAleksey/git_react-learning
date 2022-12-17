@@ -9,7 +9,7 @@ import ModalSkeleton from '../Sketeton/ModalSkeleton/ModalSkeleton';
 const CocktailInfo = () => {
   const dispatch = useDispatch();
   const { cocktailInfo, cocktailModal } = useSelector(
-    (state) => state.cocktailsSlice
+    (state) => state.cocktailsSlice 
   );
   const { data, cocktailId } = cocktailInfo;
   console.log(data);

@@ -1,11 +1,11 @@
 @import '../../variables';
-.filterBlock{
-
+.filterBlock {
+  max-width: 200px;
 }
 .filterPanel {
   // padding: 0 10px;
   width: 100%;
-  min-width: 200px;
+  // min-width: 200px;
 
   height: calc(100vh - 200px);
   overflow: scroll;
@@ -23,8 +23,8 @@
 }
 .inputSearch {
   background: #eff6ff;
-  padding: 18px 10px 19px 15px;
-  font-size: 18px;
+  padding: 10px 5px 10px 15px;
+  font-size: 12px;
   border: none;
   border-bottom: 1px solid $blueBorder-color;
   :focus {
@@ -37,6 +37,7 @@
   padding: 0;
 }
 .item {
+  font-size: 12px;
   text-align: left;
   cursor: pointer;
   padding: 5px 5px 5px 15px;
@@ -49,4 +50,32 @@
     font-weight: 900;
     background-color: #d6e6fa;
   }
+}
+
+//===========================
+
+// =============================================
+
+@media (max-width: 1281px) {
+
+}
+@media (max-width: 1025px) {
+
+}
+@media (max-width: 961px) {
+  .filterBlock {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 641px) {
+  .filterBlock {
+    max-width: 100px;
+  }
+}
+@media (max-width: 481px) {
+
+}
+@media (max-width: 320px) {
+
 }

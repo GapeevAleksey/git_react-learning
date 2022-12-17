@@ -21,7 +21,7 @@ const CocktailModal = ({ children }) => {
           className={styles.cocktailModal__content}
           onClick={(e) => e.stopPropagation()}
         >
-          {children}
+          {children} 
         </div>
       </div>
     </>

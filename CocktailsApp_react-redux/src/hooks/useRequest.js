@@ -2,7 +2,7 @@ export const useRequest = () => {
   const request = async (url) => {
     try {
       const response = await fetch(url);
-      if (response.status > 400) {
+      if (response.status > 300) {
         throw new Error('Server request error');
       }
       const data = await response.json();

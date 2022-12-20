@@ -1,4 +1,5 @@
 import styles from './IngredientFilter.module.scss';
+import searchIcon from '../../images/searchSymbol.png';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -11,6 +12,7 @@ const IngredientFilter = () => {
   const dispatch = useDispatch();
   const ingredientsSlice = useSelector((state) => state.ingredientsSlice);
   const { ingredients, currentIngredient } = ingredientsSlice;
+  const [filterPanel, setFilterPanel] = useState(false);
 
   useEffect(() => {
     dispatch(fetchIngredients());
@@ -60,16 +62,25 @@ const IngredientFilter = () => {
   };
 
   return (
-    <div className={styles.filterBlock}>
+    <div className={`${styles.filterBlock} ${filterPanel && styles.active}`}>
+      <span
+        className={styles.searchIcon}
+        onClick={() => {
+          setFilterPanel(!filterPanel);
+        }}
+      >
+        <img src={searchIcon} alt="search" />
+      </span>
+
       <input
-        className={styles.inputSearch}
+        className={`${styles.inputSearch} ${filterPanel && styles.active}`}
         value={searchIngredient}
         type="text"
         placeholder="Search..."
         // onChange={(e) => dispatch(setCurrentIngredient(e.target.value))}
         onChange={(e) => setSearchIngredient(e.target.value)}
       />
-      <div className={styles.filterPanel}>
+      <div className={`${styles.filterPanel} ${filterPanel && styles.active}`}>
         <ul className={styles.list}>{showIngredientsList(searchIngredient)}</ul>
       </div>
     </div>

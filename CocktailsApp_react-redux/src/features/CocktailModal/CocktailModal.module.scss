@@ -15,9 +15,11 @@
     transition: 0.3s;
     &.active {
       opacity: 1;
+      z-index: 20;
       pointer-events: all;
     }
     &__content {
+      
       max-height: 90%;
       // width: 50%;
       padding: 20px;
@@ -25,6 +27,6 @@
       border: 2px solid $blueBorder-color;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgb(70, 70, 70);
-      overflow: scroll;
+      overflow: auto;
     }
   }

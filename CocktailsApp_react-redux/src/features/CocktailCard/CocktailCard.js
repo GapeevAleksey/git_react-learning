@@ -26,6 +26,7 @@ const CocktailCard = ({ strDrink, strDrinkThumb, idDrink }) => {
           dispatch(setCocktailId(idDrink));
         }}
       >
+        <span className={styles.marker}></span>
         <ToggleFavorite
           idDrink={idDrink}
           data={{ strDrink, strDrinkThumb, idDrink }}

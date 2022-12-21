@@ -15,7 +15,11 @@
 // }
 
 body {
-  background-color: #f0eff4;
+  // background-color: #f0eff4;
+  background-color: #a9c9ff;
+  background-image: linear-gradient(315deg, #a9c9ff 0%, #ffbbec 100%);
+
+  height: 100vh;
 }
 
 :focus,

@@ -12,6 +12,7 @@ const CocktailCardList = () => {
   const { currentIngredient } = useSelector((state) => state.ingredientsSlice);
 
   useEffect(() => {
+    document.querySelector('.activeBlock').scrollTop = 0;
     dispatch(fetchCockailsByIngredient(currentIngredient));
   }, [currentIngredient]);
 
@@ -20,7 +21,7 @@ const CocktailCardList = () => {
       <div className={styles.title}>
         <span>{currentIngredient}</span>
       </div>
-      <div className={styles.contentBlock}>
+      <div className={`${styles.contentBlock} activeBlock`}>
         <ul className={styles.list}>
           {cocktailsByIngredient.errorStatus && (
             <h2>{cocktailsByIngredient.errorStatus}</h2>

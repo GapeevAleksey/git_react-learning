@@ -88,15 +88,16 @@
   }
   .filterPanel {
     background: #fff;
-    transition: all 0.5s ease 0s;
+    height: calc(100vh - 137px);
+    transition: all 0.5s ease 0.3s;
     &.active {
-      width: calc(100vw - 66px);
+      width: calc(100vw - 26px);
     }
   }
   .inputSearch {
     width: 0px;
     &.active {
-      width: calc(100vw - 106px);
+      width: calc(100vw - 66px);
     }
   }
 }

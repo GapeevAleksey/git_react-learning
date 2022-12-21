@@ -46,6 +46,7 @@ const IngredientFilter = () => {
             onClick={() => {
               ingredient.toLowerCase() !== currentIngredient.toLowerCase() &&
                 dispatch(setCurrentIngredient(ingredient));
+                setFilterPanel(false)
             }}
             className={
               ingredient.toLowerCase() === currentIngredient.toLowerCase()

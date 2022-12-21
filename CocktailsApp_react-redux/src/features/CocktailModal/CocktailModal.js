@@ -2,11 +2,12 @@ import styles from './CocktailModal.module.scss';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeCocktailModal } from '../../app/coctailsSlice';
+import { useEffect } from 'react';
 const CocktailModal = ({ children }) => {
   const dispatch = useDispatch();
   const cocktailsSlice = useSelector((state) => state.cocktailsSlice);
   const { cocktailModal } = cocktailsSlice;
-  
+
   return (
     <>
       <div
@@ -18,10 +19,10 @@ const CocktailModal = ({ children }) => {
         onClick={() => dispatch(closeCocktailModal())}
       >
         <div
-          className={styles.cocktailModal__content}
+          className={`${styles.cocktailModal__content} activeCardInfo`}
           onClick={(e) => e.stopPropagation()}
         >
-          {children} 
+          {children}
         </div>
       </div>
     </>

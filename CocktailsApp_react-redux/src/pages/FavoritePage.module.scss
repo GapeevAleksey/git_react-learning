@@ -1,5 +1,5 @@
 .body {
-  height: calc(100vh - 141px);
+  height: calc(100vh - 181px);
   overflow: scroll;
   overflow-x: hidden;
   margin: 0;
@@ -39,6 +39,9 @@
   }
 }
 @media (max-width: 641px) {
+  .body {
+    height: calc(100vh - 141px);
+  }
   .favoriteList {
     grid-template-columns: repeat(4, 1fr);
   }

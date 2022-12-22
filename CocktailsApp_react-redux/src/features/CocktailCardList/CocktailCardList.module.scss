@@ -30,6 +30,7 @@
 
 .title {
   box-shadow: 0px 5px 7px rgb(182, 182, 182);
+  border-bottom: 1px solid $blueBorder-color;
   background-color: #fff;
   font-size: 1rem;
   font-weight: 700;
@@ -66,7 +67,7 @@
 }
 @media (max-width: 641px) {
   .contentBlock {
-    height: calc(100vh - 176px);
+    height: calc(100vh - 178px);
   }
   .list {
     grid-template-columns: repeat(4, 1fr);
@@ -74,7 +75,7 @@
   .title {
     font-size: 0.8rem;
     font-weight: 700;
-    line-height: 35px;
+    line-height: 36px;
   }
 }
 @media (max-width: 481px) {

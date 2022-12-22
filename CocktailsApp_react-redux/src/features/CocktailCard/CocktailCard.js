@@ -1,5 +1,5 @@
 import styles from './CocktailCard.module.scss';
-import addFavoriteIcon from '../../images/heart.png';
+import addFavoriteIcon from '../../images/heartBlue.png';
 import removeFavoriteIcon from '../../images/heartPink.png';
 
 import { useDispatch, useSelector } from 'react-redux';

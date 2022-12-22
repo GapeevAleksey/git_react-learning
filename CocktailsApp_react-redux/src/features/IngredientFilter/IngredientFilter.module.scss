@@ -5,6 +5,7 @@
 }
 .filterPanel {
   // padding: 0 10px;
+  top:37px;
   position: absolute;
   width: 100%;
   // min-width: 200px;
@@ -88,7 +89,7 @@
   }
   .filterPanel {
     background: #fff;
-    height: calc(100vh - 137px);
+    height: calc(100vh - 138px);
     transition: all 0.5s ease 0.3s;
     &.active {
       width: calc(100vw - 26px);

@@ -57,6 +57,7 @@ const cocktailsSlice = createSlice({
       state.cocktailsByIngredient.loadingStatus = 'loaded';
     },
     [fetchCockailsByIngredient.rejected]: (state) => {
+      state.cocktailsByIngredient.loadingStatus = null;
       state.cocktailsByIngredient.errorStatus = 'Some error has occurred';
     },
     [fetchCocktailInfo.pending]: (state) => {

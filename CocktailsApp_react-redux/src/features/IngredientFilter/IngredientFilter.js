@@ -6,12 +6,14 @@ import {
   fetchIngredients,
   setCurrentIngredient,
 } from '../../app/ingredientsSlice';
+import LoadingPlug from '../LoadingPlug/LoadingPlug';
 
 const IngredientFilter = () => {
   const [searchIngredient, setSearchIngredient] = useState('');
   const dispatch = useDispatch();
   const ingredientsSlice = useSelector((state) => state.ingredientsSlice);
-  const { ingredients, currentIngredient } = ingredientsSlice;
+  const { ingredients, currentIngredient, loadingStatus, errorStatus } =
+    ingredientsSlice;
   const [filterPanel, setFilterPanel] = useState(false);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ const IngredientFilter = () => {
             onClick={() => {
               ingredient.toLowerCase() !== currentIngredient.toLowerCase() &&
                 dispatch(setCurrentIngredient(ingredient));
-                setFilterPanel(false)
+              setFilterPanel(false);
             }}
             className={
               ingredient.toLowerCase() === currentIngredient.toLowerCase()
@@ -60,6 +62,18 @@ const IngredientFilter = () => {
         );
       }
     });
+  };
+
+  const filterHOC = () => {
+    if (errorStatus) {
+      return <h2>{errorStatus}</h2>;
+    } else if (loadingStatus === 'loading') {
+      return <LoadingPlug />;
+    } else {
+      return (
+        <ul className={styles.list}>{showIngredientsList(searchIngredient)}</ul>
+      );
+    }
   };
 
   return (
@@ -82,7 +96,7 @@ const IngredientFilter = () => {
         onChange={(e) => setSearchIngredient(e.target.value)}
       />
       <div className={`${styles.filterPanel} ${filterPanel && styles.active}`}>
-        <ul className={styles.list}>{showIngredientsList(searchIngredient)}</ul>
+        {filterHOC()}
       </div>
     </div>
   );

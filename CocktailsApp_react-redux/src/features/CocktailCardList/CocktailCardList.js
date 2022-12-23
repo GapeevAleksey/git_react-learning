@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCockailsByIngredient } from '../../app/coctailsSlice';
 import CocktailCard from '../CocktailCard/CocktailCard';
 import { useDispatch, useSelector } from 'react-redux';
+import LoadingPlug from '../LoadingPlug/LoadingPlug';
 
 const CocktailCardList = () => {
   const dispatch = useDispatch();
@@ -10,13 +11,13 @@ const CocktailCardList = () => {
     (state) => state.cocktailsSlice
   );
   const { currentIngredient } = useSelector((state) => state.ingredientsSlice);
-  const initialQtyLoadCocktails = 24;
+  const _initialQtyLoadCocktails = 24;
   const [qtyLoadCocktails, setQtyLoadCocktails] = useState(
-    initialQtyLoadCocktails
+    _initialQtyLoadCocktails
   );
 
   useEffect(() => {
-    setQtyLoadCocktails(initialQtyLoadCocktails);
+    setQtyLoadCocktails(_initialQtyLoadCocktails);
     document.querySelector('.activeBlock').scrollTop = 0;
     dispatch(fetchCockailsByIngredient(currentIngredient));
   }, [currentIngredient]);
@@ -37,32 +38,45 @@ const CocktailCardList = () => {
       cocktailsListDiv.removeEventListener('scroll', autoLoadCocktails);
   }, [qtyLoadCocktails]);
 
+  const showCocktails = () => {
+    return (
+      <ul className={`${styles.list} cocktailsListUl`}>
+        {cocktailsByIngredient.cocktails?.map(
+          ({ strDrink, strDrinkThumb, idDrink }, index) => {
+            if (index < qtyLoadCocktails) {
+              // console.log(qtyLoadCocktails, index);
+              return (
+                <CocktailCard
+                  key={strDrink}
+                  idDrink={idDrink}
+                  strDrink={strDrink}
+                  strDrinkThumb={strDrinkThumb}
+                />
+              );
+            }
+          }
+        )}
+      </ul>
+    );
+  };
+
+  const cocktailsHOC = () => {
+    if (cocktailsByIngredient.errorStatus) {
+      return <h2>{cocktailsByIngredient.errorStatus}</h2>;
+    } else if (cocktailsByIngredient.loadingStatus === 'loading') {
+      return <LoadingPlug />;
+    } else {
+      return showCocktails();
+    }
+  };
+
   return (
     <div className={styles.body}>
       <div className={styles.title}>
         <span>{currentIngredient}</span>
       </div>
       <div className={`${styles.contentBlock} activeBlock`}>
-        <ul className={`${styles.list} cocktailsListUl`}>
-          {cocktailsByIngredient.errorStatus && (
-            <h2>{cocktailsByIngredient.errorStatus}</h2>
-          )}
-          {cocktailsByIngredient.cocktails?.map(
-            ({ strDrink, strDrinkThumb, idDrink }, index) => {
-              if (index < qtyLoadCocktails) {
-                // console.log(qtyLoadCocktails, index);
-                return (
-                  <CocktailCard
-                    key={strDrink}
-                    idDrink={idDrink}
-                    strDrink={strDrink}
-                    strDrinkThumb={strDrinkThumb}
-                  />
-                );
-              }
-            }
-          )}
-        </ul>
+        {cocktailsHOC()}
       </div>
     </div>
   );

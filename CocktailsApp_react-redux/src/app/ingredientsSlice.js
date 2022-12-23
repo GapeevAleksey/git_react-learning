@@ -26,13 +26,15 @@ const ingredientsSlice = createSlice({
   extraReducers: {
     [fetchIngredients.pending]: (state) => {
       state.loadingStatus = 'loading';
+      state.errorStatus = null
     },
     [fetchIngredients.fulfilled]: (state, action) => {
       state.ingredients = action.payload;
       state.loadingStatus = 'loaded';
     },
-    [fetchIngredients.rejected]: (state, action) => {
-      state.loadingStatus = 'loaded';
+    [fetchIngredients.rejected]: (state, action) => { 
+      state.loadingStatus = null;
+      state.errorStatus = 'Some error has occurred'
     },
   },
 });

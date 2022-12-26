@@ -12,7 +12,6 @@ const CocktailInfo = () => {
     (state) => state.cocktailsSlice
   );
   const { data, cocktailId } = cocktailInfo;
-  console.log(data);
 
   const toggleFavoriteClasses = {
     add: styles.favoriteAdd,

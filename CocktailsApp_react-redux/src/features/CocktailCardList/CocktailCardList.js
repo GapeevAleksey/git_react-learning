@@ -6,11 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoadingPlug from '../LoadingPlug/LoadingPlug';
 
 const CocktailCardList = () => {
+  const seconds = new Date();
+
   const dispatch = useDispatch();
   const { cocktailsByIngredient } = useSelector(
     (state) => state.cocktailsSlice
   );
   const { currentIngredient } = useSelector((state) => state.ingredientsSlice);
+
   const _initialQtyLoadCocktails = 24;
   const [qtyLoadCocktails, setQtyLoadCocktails] = useState(
     _initialQtyLoadCocktails
@@ -25,18 +28,26 @@ const CocktailCardList = () => {
   useEffect(() => {
     const cocktailsListDiv = document.querySelector('.activeBlock');
     const cocktailsListUl = document.querySelector('.cocktailsListUl');
+    console.log(cocktailsListDiv);
+    console.log(cocktailsListUl);
     const autoLoadCocktails = () => {
       if (
-        cocktailsListUl.getBoundingClientRect().bottom <
+        cocktailsListUl?.getBoundingClientRect().bottom <
         cocktailsListDiv.clientHeight + 350
       ) {
-        setQtyLoadCocktails((qtyLoadCocktails) => qtyLoadCocktails + 6);
+        setQtyLoadCocktails((qtyLoadCocktails) => {
+          if (cocktailsByIngredient.cocktails?.length > qtyLoadCocktails) {
+            return qtyLoadCocktails + 6;
+          } else {
+            return qtyLoadCocktails;
+          }
+        });
       }
     };
     cocktailsListDiv.addEventListener('scroll', autoLoadCocktails);
     return () =>
       cocktailsListDiv.removeEventListener('scroll', autoLoadCocktails);
-  }, [qtyLoadCocktails]);
+  }, [qtyLoadCocktails, cocktailsByIngredient]);
 
   const showCocktails = () => {
     return (
@@ -72,6 +83,9 @@ const CocktailCardList = () => {
 
   return (
     <div className={styles.body}>
+      {console.log(
+        `render UL: ${seconds.getSeconds()}.${seconds.getMilliseconds()}`
+      )}
       <div className={styles.title}>
         <span>{currentIngredient}</span>
       </div>

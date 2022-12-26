@@ -24,7 +24,6 @@ const IngredientFilter = () => {
     const activeIngredient = document.querySelector('.activeItem');
     setTimeout(() => {
       if (activeIngredient) {
-        console.log(activeIngredient);
         activeIngredient.scrollIntoView({
           block: 'center',
           behavior: 'smooth',

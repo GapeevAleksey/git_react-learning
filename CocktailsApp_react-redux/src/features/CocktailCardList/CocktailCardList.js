@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import LoadingPlug from '../LoadingPlug/LoadingPlug';
 
 const CocktailCardList = () => {
-  const seconds = new Date();
-
   const dispatch = useDispatch();
   const { cocktailsByIngredient } = useSelector(
     (state) => state.cocktailsSlice
@@ -28,8 +26,6 @@ const CocktailCardList = () => {
   useEffect(() => {
     const cocktailsListDiv = document.querySelector('.activeBlock');
     const cocktailsListUl = document.querySelector('.cocktailsListUl');
-    console.log(cocktailsListDiv);
-    console.log(cocktailsListUl);
     const autoLoadCocktails = () => {
       if (
         cocktailsListUl?.getBoundingClientRect().bottom <
@@ -83,9 +79,6 @@ const CocktailCardList = () => {
 
   return (
     <div className={styles.body}>
-      {console.log(
-        `render UL: ${seconds.getSeconds()}.${seconds.getMilliseconds()}`
-      )}
       <div className={styles.title}>
         <span>{currentIngredient}</span>
       </div>

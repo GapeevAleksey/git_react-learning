@@ -18,17 +18,43 @@
 }
 .item {
   cursor: pointer;
-  margin: 0 10px;
+  color: white;
+  margin: 0 5px;
+  position: relative;
+
+  & a {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: 900;
+    border-radius: 5px;
+    background-color: #ffd3ba;
+    &.active {
+      background-color: #faa371;
+    }
+  }
 }
 a.active {
   font-weight: 900;
-  color: $blueBorder-color;
 }
 .smallTitle {
   display: none;
 }
 .bigTitle {
   display: block;
+}
+
+.countFavorite {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23px;
+  transform: translate(-60%, -75%);
+  background-color: rgb(127, 204, 255);
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 50%;
 }
 
 //=============================

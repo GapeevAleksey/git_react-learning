@@ -1,8 +1,13 @@
 import styles from './HeaderNavigation.module.scss';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import favoriteSlice from '../../app/favoriteSlice';
 
 const HeaderNavigation = () => {
+  const countFavorite = useSelector(
+    (state) => state.favoriteSlice.favoriteCocktails
+  );
   return (
     <div className={styles.header}>
       <div className={styles.headerText}>
@@ -30,6 +35,9 @@ const HeaderNavigation = () => {
             >
               Favorite
             </NavLink>
+            <span className={styles.countFavorite}>
+              {Object.keys(countFavorite).length}
+            </span>
           </li>
         </ul>
       </nav>

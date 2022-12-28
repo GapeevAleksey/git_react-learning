@@ -44,7 +44,6 @@ const HeroesListItem = ({ id, name, description, element }) => {
       <span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
         <button
           onClick={() => {
-            console.log(id);
             deletePerson(id);
           }}
           type="button"

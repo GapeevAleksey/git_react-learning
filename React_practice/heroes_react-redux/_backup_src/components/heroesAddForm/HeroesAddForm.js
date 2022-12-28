@@ -10,25 +10,17 @@
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAddHeroMutation } from '../../redux/heroesApi';
 import { heroesAdd } from '../heroesList/heroesSlice';
 
 const HeroesAddForm = () => {
   const [newPerson, setNewPerson] = useState({});
-  const [addHero, { isError }] = useAddHeroMutation();
-  // const dispatch = useDispatch();
-
-  const addPerson = async () => {
-    await addHero({ ...newPerson }).unwrap();
-    setNewPerson({});
-  };
-
+  const dispatch = useDispatch();
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
         console.log(newPerson);
-        addPerson();
+        dispatch(heroesAdd(newPerson));
       }}
       className="border p-4 shadow-lg rounded"
     >
@@ -100,6 +92,7 @@ const HeroesAddForm = () => {
       <button type="submit" className="btn btn-primary">
         Создать
       </button>
+     
     </form>
   );
 };

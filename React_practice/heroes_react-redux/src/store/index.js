@@ -1,33 +1,35 @@
 import { configureStore } from '@reduxjs/toolkit';
-import heroes from '../components/heroesList/heroesSlice'
-import filter from '../components/heroesFilters/filterSlice'
+import { heroesApi } from '../redux/heroesApi';
 
-const strMiddleWare = () => {
-  return (next) => {
-    return (action) => {
-      if (typeof action === 'string') {
-        return next({
-          type: action,
-        });
-      }
-      return next(action);
-    };
-  };
-};
+// import heroes from '../components/heroesList/heroesSlice';
+// import filter from '../components/heroesFilters/filterSlice';
 
-// const store = createStore(
-//   combineReducers({ heroes, filter }),
-//   compose(
-//     applyMiddleware(ReduxThunk, strMiddleWare),
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-//   )
-// );
+// const strMiddleWare = () => {
+//   return (next) => {
+//     return (action) => {
+//       if (typeof action === 'string') {
+//         return next({
+//           type: action,
+//         });
+//       }
+//       return next(action);
+//     };
+//   };
+// };
+
+// const store = configureStore({
+//   reducer: { heroes, filter },
+//   middleware: (getDefaultMiddleware) =>
+//     getDefaultMiddleware().concat(strMiddleWare),
+//   devTools: process.env.NODE_ENV !== 'production',
+// });
 
 const store = configureStore({
-  reducer: { heroes, filter },
+  reducer: {
+    [heroesApi.reducerPath]: heroesApi.reducer,
+  },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(strMiddleWare),
-  devTools: process.env.NODE_ENV !== 'production',
+    getDefaultMiddleware().concat(heroesApi.middleware),
 });
 
 export default store;

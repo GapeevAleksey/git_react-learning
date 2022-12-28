@@ -1,14 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { useDeleteHeroMutation } from '../../redux/heroesApi';
-import { heroesRemove } from '../heroesList/heroesSlice';
+import {heroesRemove} from '../heroesList/heroesSlice'
 const HeroesListItem = ({ id, name, description, element }) => {
   const dispatch = useDispatch();
-  const [deleteHero] = useDeleteHeroMutation();
-
-  const deletePerson = async (id) => {
-    await deleteHero(id).unwrap();
-  };
-
   let elementClassName;
 
   switch (element) {
@@ -27,6 +20,7 @@ const HeroesListItem = ({ id, name, description, element }) => {
     default:
       elementClassName = 'bg-secondary bg-gradient';
   }
+
   return (
     <li
       className={`card flex-row mb-4 shadow-lg text-white ${elementClassName}`}
@@ -45,7 +39,7 @@ const HeroesListItem = ({ id, name, description, element }) => {
         <button
           onClick={() => {
             console.log(id);
-            deletePerson(id);
+            dispatch(heroesRemove(id));
           }}
           type="button"
           className="btn-close btn-close"

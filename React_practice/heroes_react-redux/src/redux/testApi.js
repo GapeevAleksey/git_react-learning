@@ -7,11 +7,16 @@ export const testApi = createApi({
   }),
   endpoints: (build) => ({
     fetchAllUsers: build.query({
+      query: (limit = 5) => ({
+        url: `/users${limit && `?_limit=${limit}`}`,
+      }),
+    }),
+    fetchAllPosts: build.query({
       query: () => ({
-        url: '/users',
+        url: '/posts',
       }),
     }),
   }),
 });
 
-export const { useFetchAllUsersQuery } = testApi;
+export const { useFetchAllUsersQuery, useFetchAllPostsQuery } = testApi;

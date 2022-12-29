@@ -7,13 +7,7 @@ export const heroesApi = createApi({
   endpoints: (builder) => ({
     getHeroes: builder.query({
       query: (qty) => `heroes${qty && `?_limit=${qty}`}`,
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Heroes', id })),
-              { type: 'Heroes', id: 'LIST' },
-            ]
-          : [{ type: 'Heroes', id: 'LIST' }],
+      providesTags: ['Heroes'],
     }),
     addHero: builder.mutation({
       query: (body) => ({
@@ -21,7 +15,7 @@ export const heroesApi = createApi({
         method: 'POST',
         body,
       }),
-      invalidatesTags: [{ type: 'Heroes', id: 'LIST' }],
+      invalidatesTags: ['Heroes'],
     }),
     deleteHero: builder.mutation({
       query(id) {
@@ -30,9 +24,10 @@ export const heroesApi = createApi({
           method: 'DELETE',
         };
       },
-      invalidatesTags: [{ type: 'Heroes', id: 'LIST' }],
+      invalidatesTags: ['Heroes'],
     }),
   }),
 });
 // console.log(heroesApi);
-export const { useGetHeroesQuery, useAddHeroMutation, useDeleteHeroMutation } = heroesApi;
+export const { useGetHeroesQuery, useAddHeroMutation, useDeleteHeroMutation } =
+  heroesApi;

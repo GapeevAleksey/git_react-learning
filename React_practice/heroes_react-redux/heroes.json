@@ -1,28 +1,34 @@
 {
   "heroes": [
     {
-      "name": "Kennith",
-      "description": "Avon",
-      "element": "fish",
-      "id": "1"
-    },
-    {
-      "name": "Chad",
-      "description": "Cambridgeshire",
-      "element": "cat",
-      "id": "6"
-    },
-    {
       "name": "Daisy",
       "description": "Run and jump",
       "id": 3579,
       "element": "lion"
     },
     {
-      "name": "tiger",
-      "description": "bite bite",
-      "id": 1276,
+      "name": "Pes",
+      "description": "wau wau",
+      "id": 1045,
+      "element": "dog"
+    },
+    {
+      "name": "Kes",
+      "description": "mau mau",
+      "id": 7368,
+      "element": "cat"
+    },
+    {
+      "name": "alex23",
+      "description": "allwr",
+      "id": 5796,
       "element": "fish"
+    },
+    {
+      "name": "caty",
+      "description": "erw",
+      "id": 5140,
+      "element": "cat"
     }
   ],
   "posts": [

@@ -16,7 +16,6 @@ import { heroesAdd } from '../heroesList/heroesSlice';
 const HeroesAddForm = () => {
   const [newPerson, setNewPerson] = useState({});
   const [addHero, { isError }] = useAddHeroMutation();
-  // const dispatch = useDispatch();
 
   const addPerson = async () => {
     await addHero({ ...newPerson }).unwrap();

@@ -1,0 +1,31 @@
+li {
+  cursor: pointer;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 900;
+  box-shadow: 3px 3px 10px rgb(172, 172, 172);
+}
+.post-title {
+}
+.body {
+  display: none;
+}
+.active .body {
+  position: relative;
+  display: block;
+  margin: 10px;
+  font-weight: normal;
+  padding-top: 10px;
+  font-style: italic;
+  color: rgb(59, 59, 59);
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: rgb(197, 197, 197);
+    height: 1px;
+    width: 100%;
+    top: 0px;
+  }
+}

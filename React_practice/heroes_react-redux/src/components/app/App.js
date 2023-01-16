@@ -1,22 +1,17 @@
-import HeroesPage from '../../pages/heroesPage';
 import './app.scss';
 import { Routes, Route } from 'react-router-dom';
-import UsersPage from '../../pages/usersPage';
-import Header from '../header/Header';
-import PostPage from '../../pages/postPage';
-import GoodsPage from '../../pages/goodsPage';
+import HeaderNav from '../header/HeaderNav';
+import Posts from '../posts/Posts';
+import Users from '../users/Users';
 
 const App = () => {
   return (
     <main className="app">
-      <Header />
+      <HeaderNav />
       <div className="content">
         <Routes>
-          <Route index element={<HeroesPage />} />
-          <Route path="/" element={<HeroesPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path='/posts' element={<PostPage/>}/>
-          <Route path='/goods' element={ <GoodsPage/>}/>
+          <Route index element={<Posts />} />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </div>
     </main>

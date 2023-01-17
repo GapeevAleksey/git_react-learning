@@ -1,0 +1,39 @@
+{
+  "heroes": [
+    {
+      "name": "Daisy",
+      "description": "Run and jump",
+      "id": 3579,
+      "element": "lion"
+    },
+    {
+      "name": "Pes",
+      "description": "wau wau",
+      "id": 1045,
+      "element": "dog"
+    },
+    {
+      "name": "paul",
+      "description": "ga ga",
+      "id": 5253,
+      "element": "lion"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

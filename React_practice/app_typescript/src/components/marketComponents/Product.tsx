@@ -1,12 +1,12 @@
 import '../app/app.css';
-import React from 'react';
+import React, { memo } from 'react';
 import { IProduct } from '../../interfaces/interfaces';
 
 interface ProductProps {
   product: IProduct;
 }
 
-const Product: React.FC<ProductProps> = ({ product }) => {
+const Product: React.FC<ProductProps> = memo(({ product }) => {
   return (
     <div key={product.id} className="card">
       <div className="card-image">
@@ -21,6 +21,6 @@ const Product: React.FC<ProductProps> = ({ product }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Product;

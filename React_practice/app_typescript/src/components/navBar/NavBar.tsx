@@ -18,6 +18,15 @@ const NavBar: React.FunctionComponent = () => {
           <li>
             <NavLink to="/market">Маркет</NavLink>
           </li>
+          <li>
+            <NavLink to="/github">GitHub</NavLink>
+          </li>
+          <li>
+            <NavLink to="/typescript">TypeScript</NavLink>
+          </li>
+          <li>
+            <NavLink to="/javascript">JavaScript</NavLink>
+          </li>
         </ul>
       </div>
     </nav>

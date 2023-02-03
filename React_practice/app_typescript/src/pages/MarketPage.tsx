@@ -3,7 +3,7 @@ import '../components/app/app.css';
 import CreateProduct from '../components/marketComponents/CreateProduct';
 import Modal from '../components/marketComponents/Modal';
 import Product from '../components/marketComponents/Product';
-import { ModalContext, ModalState } from '../context/ModalContext';
+import { ModalContext } from '../context/ModalContext';
 import { useProducts } from '../hooks/products';
 import { IProduct } from '../interfaces/interfaces';
 
@@ -15,27 +15,31 @@ const MarketPage: React.FC = () => {
     close();
   };
 
-  console.log(modal);
+  // ========================
+
+  // const fName: string = '1';
+  // fName && console.log('!!!');
+
+  // ========================
+
   return (
-    <ModalState>
-      <div className="mt2">
-        {loading && <h4>Loading...</h4>}
-        {error && <h4>{error}</h4>}
-        {modal && (
-          <Modal title="Create new product" onClose={close}>
-            <CreateProduct onCreate={onCreateHandler} />
-          </Modal>
-        )}
-        <ul className="products-list">
-          {products?.map((product) => (
-            <Product product={product} key={product.id} />
-          ))}
-        </ul>
-        <div className="btn-modal" onClick={open}>
-          +
-        </div>
+    <div className="mt2">
+      {loading && <h4>Loading...</h4>}
+      {error && <h4>{error}</h4>}
+      {modal && (
+        <Modal title="Create new product" onClose={close}>
+          <CreateProduct onCreate={onCreateHandler} />
+        </Modal>
+      )}
+      <ul className="products-list">
+        {products?.map((product) => (
+          <Product product={product} key={product.id} />
+        ))}
+      </ul>
+      <div className="btn-modal" onClick={open}>
+        +
       </div>
-    </ModalState>
+    </div>
   );
 };
 

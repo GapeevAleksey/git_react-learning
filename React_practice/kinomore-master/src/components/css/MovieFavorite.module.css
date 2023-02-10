@@ -1,0 +1,137 @@
+.favorite {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid transparent;
+}
+
+.favorite[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.favorite.active {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.favorite.active svg {
+  fill: none;
+}
+
+.favorite svg {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+@media (min-width: 577px) {
+  .favorite:hover {
+    background-color: rgba(153, 153, 153, 0.25);
+  }
+}
+
+.text {
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: transparent;
+  color: #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.text.active {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+@media (min-width: 577px) {
+  .text.active:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+}
+
+.text.active svg {
+  fill: none;
+}
+
+@media (max-width: 576px) {
+  .text {
+    padding: 6px;
+    font-size: 0;
+    min-width: auto;
+    min-height: auto;
+  }
+  .text span {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 577px) {
+  .text:hover {
+    background-color: rgba(153, 153, 153, 0.1);
+  }
+}
+
+.text svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.regular {
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  background-color: #f2f2f2;
+  color: var(--color-dark);
+}
+
+.regular.active {
+  background-color: var(--color-white);
+}
+
+@media (min-width: 577px) {
+  .regular.active:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+}
+
+@media (max-width: 576px) {
+  .regular {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 11px 20px;
+    min-width: 153px;
+    min-height: 41px;
+  }
+}
+
+@media (min-width: 577px) {
+  .regular:hover {
+    background-color: #e6e6e6;
+  }
+}
+
+.regular svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: currentColor;
+}

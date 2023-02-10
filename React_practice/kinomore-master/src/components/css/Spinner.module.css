@@ -1,0 +1,29 @@
+.spinner {
+  -webkit-animation: rotate-keyframes 1s linear infinite;
+          animation: rotate-keyframes 1s linear infinite;
+}
+
+@-webkit-keyframes rotate-keyframes {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-keyframes {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.dark circle {
+  stroke-width: 1.5;
+  stroke-opacity: 1;
+  stroke: var(--color-light-dark);
+}
+
+.dark path {
+  stroke-width: 1.5;
+  stroke: white;
+}

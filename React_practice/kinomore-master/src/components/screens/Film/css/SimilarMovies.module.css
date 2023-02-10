@@ -1,0 +1,19 @@
+.container {
+  padding-top: 50px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-top: 35px;
+  }
+}
+
+.item {
+  padding-top: 6px;
+}
+
+@media (max-width: 1024px) {
+  .item {
+    padding-top: 0;
+  }
+}

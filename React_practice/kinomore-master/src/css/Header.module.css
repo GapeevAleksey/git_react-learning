@@ -1,0 +1,114 @@
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--color-dark);
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 22px var(--container-offset);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 17px var(--container-offset);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-right: auto;
+  }
+}
+
+.left {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.link {
+  position: relative;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--color-white);
+  outline: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .link {
+    font-size: 15px;
+    line-height: 15px;
+    margin-right: 8px;
+  }
+}
+
+.link:before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.link:hover:before, .link:focus-visible:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.link:hover {
+  color: var(--color-white);
+}

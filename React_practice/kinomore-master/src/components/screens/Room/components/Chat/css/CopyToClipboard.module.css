@@ -1,0 +1,22 @@
+.share {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  color: var(--color-light-dark);
+}
+
+.share svg {
+  display: block;
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}

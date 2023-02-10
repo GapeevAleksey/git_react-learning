@@ -1,0 +1,40 @@
+.header {
+  margin-top: 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding: 10px 50px;
+  background-color: #1d2e4d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #acb1bd;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar a {
+  color: #acb1bd;
+  margin-right: 10px;
+}

@@ -1,0 +1,47 @@
+.container {
+  padding-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-top: 5px;
+  }
+}
+
+.facts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.item {
+  position: relative;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.item a {
+  color: var(--color-dark);
+  text-decoration: underline;
+}
+
+.item a:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.item:not(:last-child) {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

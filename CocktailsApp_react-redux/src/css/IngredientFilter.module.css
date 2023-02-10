@@ -1,0 +1,104 @@
+@charset "UTF-8";
+.filterBlock {
+  max-width: 200px;
+  position: relative;
+}
+
+.filterPanel {
+  top: 37px;
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 177px);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.filterPanel::-webkit-scrollbar {
+  width: 3px;
+  /* ширина scrollbar */
+}
+
+.filterPanel::-webkit-scrollbar-track {
+  background: #dadada;
+  /* цвет дорожки */
+}
+
+.filterPanel::-webkit-scrollbar-thumb {
+  background-color: #7a9cc2;
+  /* цвет плашки */
+}
+
+.searchIcon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.inputSearch {
+  background: #eff6ff;
+  padding: 10px 5px 10px 35px;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #60a5fa;
+}
+
+.inputSearch :focus {
+  outline: 0;
+}
+
+.list {
+  margin-top: 0;
+  padding: 0;
+}
+
+.item {
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  padding: 5px 5px 5px 15px;
+}
+
+.item:hover {
+  color: #60a5fa;
+  background-color: #f4f8ff;
+}
+
+.item.active {
+  color: #60a5fa;
+  font-weight: 900;
+  background-color: #d6e6fa;
+}
+
+@media (max-width: 961px) {
+  .filterBlock {
+    max-width: 130px;
+  }
+  .inputSearch {
+    width: 90px;
+  }
+}
+
+@media (max-width: 641px) {
+  .filterBlock {
+    z-index: 10;
+    width: 0px;
+  }
+  .filterBlock.active {
+    position: absolute;
+  }
+  .filterPanel {
+    background: #fff;
+    height: calc(100vh - 138px);
+    -webkit-transition: all 0.5s ease 0.3s;
+    transition: all 0.5s ease 0.3s;
+  }
+  .filterPanel.active {
+    width: calc(100vw - 26px);
+  }
+  .inputSearch {
+    width: 0px;
+  }
+  .inputSearch.active {
+    width: calc(100vw - 66px);
+  }
+}

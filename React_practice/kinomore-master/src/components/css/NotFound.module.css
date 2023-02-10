@@ -1,0 +1,67 @@
+.section {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .section .link {
+    padding: 13px 15px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.container {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+.title {
+  composes: title from '../../UI/Title/Title.module.scss';
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 70px;
+  max-width: 450px;
+  margin: 0 auto 30px;
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 45px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    max-width: 350px;
+  }
+}
+
+.desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+@media (max-width: 576px) {
+  .desc {
+    margin-bottom: 25px;
+  }
+}

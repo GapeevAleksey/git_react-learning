@@ -1,0 +1,86 @@
+.remove-post {
+  display: none;
+}
+
+li {
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 900;
+  -webkit-box-shadow: 3px 3px 10px #acacac;
+          box-shadow: 3px 3px 10px #acacac;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'A B' 'C C';
+  -ms-grid-columns: 100% auto;
+      grid-template-columns: 100% auto;
+}
+
+li:hover {
+  -webkit-box-shadow: 5px 5px 15px dimgray;
+          box-shadow: 5px 5px 15px dimgray;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  background-color: #f6fbff;
+}
+
+li:hover .remove-post {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: B;
+  display: block;
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  font-weight: 900;
+}
+
+li:hover .remove-post:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  color: #db1414;
+}
+
+li.active {
+  -webkit-box-shadow: 3px 3px 15px #3b3b3b;
+          box-shadow: 3px 3px 15px #3b3b3b;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  background-color: #f6fbff;
+}
+
+.post-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: A;
+}
+
+.body {
+  display: none;
+}
+
+.active .body {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: C;
+  position: relative;
+  display: block;
+  margin: 10px;
+  font-weight: normal;
+  padding-top: 10px;
+  font-style: italic;
+  color: #3b3b3b;
+}
+
+.active .body:before {
+  content: '';
+  position: absolute;
+  background-color: #c5c5c5;
+  height: 1px;
+  width: 100%;
+  top: 0px;
+}

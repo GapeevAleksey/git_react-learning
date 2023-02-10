@@ -1,0 +1,96 @@
+.container {
+  padding-top: 15px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-top: 10px;
+  }
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrapper {
+    gap: 15px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.item {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 576px) {
+  .item {
+    padding-bottom: 70%;
+  }
+}
+
+@media (max-width: 420px) {
+  .item {
+    padding-bottom: 60%;
+  }
+}
+
+.title {
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 576px) {
+  .title {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+.title span {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+
+.btn {
+  display: block;
+  margin: 40px auto 0;
+}

@@ -1,0 +1,46 @@
+.message {
+  background-color: var(--color-light-dark);
+  color: var(--color-white);
+  padding: 17px 14px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.name {
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.text {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.time {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.5);
+}

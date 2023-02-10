@@ -1,0 +1,143 @@
+.list {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px;
+  right: 0;
+  padding-bottom: 100px;
+  width: 200px;
+  padding-top: 20px;
+  margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .list {
+    display: -ms-grid;
+    display: grid;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 35px;
+  }
+}
+
+.item {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .item {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .item {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+.item:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+@media (max-width: 768px) {
+  .item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media (max-width: 576px) {
+  .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.quantity {
+  margin: 0;
+  display: block;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 28px;
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .quantity {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .quantity {
+    font-size: 25px;
+    line-height: 25px;
+    margin-right: 0;
+    margin-bottom: 3px;
+  }
+}
+
+.percent {
+  font-size: 16px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+}
+
+@media (max-width: 576px) {
+  .percent {
+    display: none;
+  }
+}
+
+.caption {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 300;
+  white-space: nowrap;
+  color: var(--color-dark);
+}
+
+@media (max-width: 375px) {
+  .caption {
+    white-space: normal;
+    display: inline;
+    paddding: 0 8px;
+    word-break: break-all;
+  }
+}

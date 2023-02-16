@@ -2,37 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useGetReposQuery, useLazyGetReposQuery } from '../../store/githubApi';
 import { IReposItem } from '../../types/IRepos';
 import ReposItem from '../reposItem/ReposItem';
-import styles from './ReposList.module.scss'
+import styles from './ReposList.module.scss';
 
-type Search = {
-  search: string;
+type IReposList = {
+  reposList: IReposItem[];
+  searchTitle: string;
 };
 
-const ReposList: React.FC<Search> = ({ search }) => {
-  const [pageNumber, setPageNumber] = useState(1);
-  const [reposList, setReposList] = useState<IReposItem[]>([]);
-  const {
-    data: repos,
-    isLoading,
-    isError,
-  } = useGetReposQuery({ search, page: pageNumber });
-
-  const [getMoreRepos, { data: reposMore, isLoading: isReposLoading }] =
-    useLazyGetReposQuery();
-
-  useEffect(() => {
-    if (repos) {
-      setReposList((prev) => [...prev, ...repos.items]);
-    }
-  }, [repos]);
-
-  useEffect(() => {
-    getMoreRepos({ search, page: pageNumber });
-  }, [pageNumber]);
-
+const ReposList: React.FC<IReposList> = ({ reposList = [], searchTitle }) => {
   return (
     <div className={styles.reposList}>
-      <h2 className={styles.reposListTitle}>{search}</h2>
+      <h2 className={styles.reposListTitle}>{searchTitle}</h2>
       <ul>
         {reposList?.map((repo) => (
           <ReposItem
@@ -49,13 +29,6 @@ const ReposList: React.FC<Search> = ({ search }) => {
           />
         ))}
       </ul>
-      <button
-        onClick={() => {
-          setPageNumber((prev) => prev + 1);
-        }}
-      >
-        load more
-      </button>
     </div>
   );
 };

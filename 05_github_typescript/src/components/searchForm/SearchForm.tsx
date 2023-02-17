@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLazyGetReposQuery } from '../../store/githubApi';
 import styles from './SearchForm.module.scss';
 
 type SearchFormProps = {
@@ -24,7 +23,10 @@ const SearchForm: React.FC<SearchFormProps> = ({ searchHandler }) => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            searchHandler(search);
+            if (search.length > 2) {
+              searchHandler(search);
+              setSearch('')
+            }
           }}
         >
           search

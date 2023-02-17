@@ -1,0 +1,17 @@
+.loadMoreBtn {
+    margin-top: 30px;
+    button {
+      cursor: pointer;
+      width: 150px;
+      height: 30px;
+      border: none;
+      color: aliceblue;
+      background: rgb(199, 199, 199);
+      border-radius: 10px;
+      letter-spacing: 2px;
+      transition: all 200ms ease-in-out;
+      &:hover {
+        background: rgb(29, 46, 77);
+      }
+    }
+  }

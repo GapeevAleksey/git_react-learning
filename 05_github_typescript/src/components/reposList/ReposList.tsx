@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useGetReposQuery, useLazyGetReposQuery } from '../../store/githubApi';
+import React from 'react';
 import { IReposItem } from '../../types/IRepos';
 import ReposItem from '../reposItem/ReposItem';
 import styles from './ReposList.module.scss';
 
-type IReposList = {
-  reposList: IReposItem[];
+type IReposListProps = {
   searchTitle: string;
+  reposList: IReposItem[];
 };
 
-const ReposList: React.FC<IReposList> = ({ reposList = [], searchTitle }) => {
+const ReposList: React.FC<IReposListProps> = ({ searchTitle, reposList = [] }) => {
   return (
     <div className={styles.reposList}>
       <h2 className={styles.reposListTitle}>{searchTitle}</h2>
@@ -17,15 +16,8 @@ const ReposList: React.FC<IReposList> = ({ reposList = [], searchTitle }) => {
         {reposList?.map((repo) => (
           <ReposItem
             key={repo.id}
-            language={repo.language}
-            name={repo.name}
-            likes={repo.stargazers_count}
-            avatar={repo.owner.avatar_url}
-            login={repo.owner.login}
-            htmlUrl={repo.owner.html_url}
-            description={repo.description}
-            updated={repo.updated_at}
-            forks={repo.forks_count}
+            searchTitle={searchTitle}
+            repoInfo={repo}
           />
         ))}
       </ul>

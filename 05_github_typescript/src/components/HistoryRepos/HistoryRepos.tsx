@@ -10,7 +10,6 @@ const HistoryRepos = () => {
     <div className={styles.historyRepos}>
       <ul>
         {history[historyActivePoint]?.map((historyRepoItem: IReposItem) => (
-          // <li key={historyRepoItem.id}>{historyRepoItem.name}</li>
           <ReposItem
             key={historyRepoItem.id}
             searchTitle={historyActivePoint}

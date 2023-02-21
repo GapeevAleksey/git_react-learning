@@ -32,7 +32,7 @@ const SearchReposModule: React.FC = () => {
     <>
       <SearchForm searchHandler={searchHandler} />
       <ReposList searchTitle={search} reposList={reposList} />
-      {isError && <h3>Something error. Try again later...</h3>}
+      {isError && <h3>Something error occurred. Try again later...</h3>}
       {isFetching ? <Spinner /> : <LoadMoreButton LoadMoreButtonHandler={LoadMoreButtonHandler} />}
     </>
   );

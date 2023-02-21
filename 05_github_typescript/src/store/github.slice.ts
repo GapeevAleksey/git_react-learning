@@ -11,9 +11,23 @@ type HistoryType = {
   [key: string]: IReposItem[];
 };
 
-const initialState = {
-  history: {} as HistoryType,
-  historyActivePoint: '' as string,
+type IinitState = {
+  history: HistoryType;
+  historyActivePoint: string;
+};
+
+const historyActivePointDefault = () => {
+  const historyData = JSON.parse(localStorage.getItem('history') || '{}');
+  if (historyData) {
+    const keysHistory = Object.keys(historyData);
+    return keysHistory[keysHistory.length - 1];
+  }
+  return '';
+};
+
+const initialState: IinitState = {
+  history: JSON.parse(localStorage.getItem('history') || '{}'),
+  historyActivePoint: historyActivePointDefault(),
   //   favorite: [],
 };
 
@@ -23,17 +37,14 @@ const githubSlice = createSlice({
   reducers: {
     addToHistory: (state, action: PayloadAction<ActionPayLoadHistory>) => {
       if (state.history[action.payload.searchTitle]) {
-        if (
-          !state.history[action.payload.searchTitle].find((item: IReposItem) => item.id === action.payload.repoInfo.id)
-        ) {
-          state.history[action.payload.searchTitle] = [
-            ...state.history[action.payload.searchTitle],
-            action.payload.repoInfo,
-          ];
-        }
+        state.history[action.payload.searchTitle] = [
+          ...state.history[action.payload.searchTitle],
+          action.payload.repoInfo,
+        ];
       } else {
         state.history[action.payload.searchTitle] = [action.payload.repoInfo];
       }
+      localStorage.setItem('history', JSON.stringify(state.history));
     },
     setHistoryActivePoint: (state, action: PayloadAction<string>) => {
       state.historyActivePoint = action.payload;

@@ -7,11 +7,16 @@ type ActionPayLoadHistory = {
   repoInfo: IReposItem;
 };
 
+type HistorySearch = {
+  lastSearch: string;
+};
+
 type HistoryType = {
   [key: string]: IReposItem[];
 };
 
 type IinitState = {
+  historySearch: HistorySearch;
   history: HistoryType;
   historyActivePoint: string;
 };
@@ -26,6 +31,7 @@ const historyActivePointDefault = () => {
 };
 
 const initialState: IinitState = {
+  historySearch: { lastSearch: 'githubApi' },
   history: JSON.parse(localStorage.getItem('history') || '{}'),
   historyActivePoint: historyActivePointDefault(),
   //   favorite: [],
@@ -49,9 +55,12 @@ const githubSlice = createSlice({
     setHistoryActivePoint: (state, action: PayloadAction<string>) => {
       state.historyActivePoint = action.payload;
     },
+    addLastSearchItem: (state, action: PayloadAction<string>) => {
+      state.historySearch.lastSearch = action.payload;
+    },
   },
 });
 
-export const { addToHistory, setHistoryActivePoint } = githubSlice.actions;
+export const { addToHistory, setHistoryActivePoint, addLastSearchItem } = githubSlice.actions;
 
 export const githubReducer = githubSlice.reducer;

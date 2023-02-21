@@ -5,8 +5,8 @@
   min-height: 100%;
   background-color: rgb(29, 46, 77);
   border-radius: 10px;
-
   color: rgb(172, 177, 189);
+ 
   & p {
     color: rgb(248, 248, 248);
     margin-bottom: 10px;
@@ -16,12 +16,16 @@
   }
   & ul {
     text-align-last: left;
-    & li {
+    & .searchItem {
       cursor: pointer;
       padding: 10px 20px;
       &:hover {
-        background-color: rgb(20, 32, 53);
+        background-color: rgb(55, 76, 112);
       }
     }
   }
+}
+.active {
+  color: rgb(248, 248, 248);
+  background-color: rgb(55, 76, 112);
 }

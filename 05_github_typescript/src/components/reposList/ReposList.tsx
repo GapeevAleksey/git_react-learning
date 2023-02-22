@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { IReposItem } from '../../types/IRepos';
 import ReposItem from '../reposItem/ReposItem';
+import ListEdgeLine from './ListEdgeLine';
 import styles from './ReposList.module.scss';
 
 type IReposListProps = {
@@ -9,14 +10,21 @@ type IReposListProps = {
 };
 
 const ReposList: React.FC<IReposListProps> = memo(({ searchTitle, reposList = [] }) => {
-  console.log('RL_DM', reposList);
   return (
     <div className={styles.reposList}>
       <h2 className={styles.reposListTitle}>{searchTitle}</h2>
       <ul>
-        {reposList?.map((repo) => (
-          <ReposItem key={repo.id} searchTitle={searchTitle} repoInfo={repo} />
-        ))}
+        {reposList?.map((repo, index) => {
+          if (!((index + 1) % 5)) {
+            return (
+              <div key={repo.forks_count}>
+                <ReposItem key={repo.id} searchTitle={searchTitle} repoInfo={repo} />
+                <ListEdgeLine numberPage={(index + 1) / 5} />
+              </div>
+            );
+          }
+          return <ReposItem key={repo.id} searchTitle={searchTitle} repoInfo={repo} />;
+        })}
       </ul>
     </div>
   );

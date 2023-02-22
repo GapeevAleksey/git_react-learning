@@ -1,7 +1,18 @@
 .reposList {
-   
 }
 .reposListTitle {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edgeLine {
+  display: flex;
+  justify-content: end;
+  & div {
+    color: aliceblue;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #73a3da;
+  }
 }

@@ -11,10 +11,6 @@ import Spinner from '../Spinner/Spinner';
 const SearchReposModule: React.FC = () => {
   const { historySearch } = useSelector((state: any) => state.githubReducer);
   const dispatch = useDispatch();
-  // const initSearch = () => {
-  //  return historyActivePoint || 'githubApi'
-  // };
-
   const [search, setSearch] = useState<string>(historySearch.lastSearch);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [reposList, setReposList] = useState<IReposItem[]>([]);
@@ -31,17 +27,17 @@ const SearchReposModule: React.FC = () => {
   useEffect(() => {
     return () => {
       setReposList([]);
-      console.log('CDU', reposList);
+      // console.log('CDU', reposList);
     };
   }, []);
 
   useEffect(() => {
-    console.log('SM_DM', reposList);
+    // console.log('SM_DM', reposList);
     getRepos({ search, page: pageNumber });
   }, [pageNumber, search]);
 
   useEffect(() => {
-    console.log(repos?.items)
+    // console.log(repos?.items);
     repos && setReposList((prev) => [...prev, ...repos.items]);
     dispatch(addLastSearchItem(search));
   }, [repos?.items]);

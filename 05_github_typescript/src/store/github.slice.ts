@@ -34,7 +34,6 @@ const initialState: IinitState = {
   historySearch: { lastSearch: 'githubApi' },
   history: JSON.parse(localStorage.getItem('history') || '{}'),
   historyActivePoint: historyActivePointDefault(),
-  //   favorite: [],
 };
 
 const githubSlice = createSlice({

@@ -29,16 +29,22 @@ const SearchReposModule: React.FC = () => {
   };
 
   useEffect(() => {
-    setReposList([]);
+    return () => {
+      setReposList([]);
+      console.log('CDU', reposList);
+    };
   }, []);
+
   useEffect(() => {
+    console.log('SM_DM', reposList);
     getRepos({ search, page: pageNumber });
   }, [pageNumber, search]);
 
   useEffect(() => {
+    console.log(repos?.items)
     repos && setReposList((prev) => [...prev, ...repos.items]);
     dispatch(addLastSearchItem(search));
-  }, [repos]);
+  }, [repos?.items]);
 
   return (
     <>
